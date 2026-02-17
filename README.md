@@ -1,6 +1,6 @@
 # 🚀 Gerenciador REP - Control iD 
 
-Uma solução leve e eficiente para gestão de usuários e biometria facial em relógios de ponto **Control iD (iDClass e iDFace)**. Este projeto foi desenvolvido para simplificar a manutenção de equipamentos que operam sem sistemas de integração nativos.
+Uma solução leve e eficiente para gestão de usuários e biometria facial em relógios de ponto **Control iD **. Este projeto foi desenvolvido para simplificar a manutenção de equipamentos que operam sem sistemas de integração nativos.
 
 ## ✨ Diferenciais do Projeto
 
