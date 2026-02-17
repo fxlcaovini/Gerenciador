@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let isProcessing = false;
     const MAX_USERS_PER_PAGE = 100;
 
-    // Elementos da Interface
     const logElement = document.getElementById('log');
     const progressBar = document.getElementById('progressBar');
     const loadBtn = document.getElementById('loadBtn');
@@ -12,13 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadZipBtn = document.getElementById('uploadZipBtn');
     const zipInput = document.getElementById('zipInput');
     const testBtn = document.getElementById('testBtn');
-
-    // Elementos do Login de Suporte
     const supportLoginScreen = document.getElementById('supportLoginScreen');
     const mainApp = document.getElementById('mainApp');
     const btnSupportLogin = document.getElementById('btnSupportLogin');
 
-    // --- LÓGICA DO LOGIN DE SUPORTE ---
     btnSupportLogin.addEventListener('click', async () => {
         const user = document.getElementById('supportUser').value;
         const pass = document.getElementById('supportPass').value;
@@ -33,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await res.json();
 
             if (data.success) {
-                supportLoginScreen.style.display = 'none'; // Esconde login suporte
-                mainApp.style.display = 'block';           // Mostra o app
+                supportLoginScreen.style.display = 'none'; 
+                mainApp.style.display = 'block';           
                 log("Acesso ao suporte autorizado.", "success");
             } else {
                 errorDiv.innerText = data.message;
