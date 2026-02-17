@@ -52,10 +52,3 @@ Se quiser rodar o código fonte ou contribuir:
     node server.js
     ```
 
----
-
-## 📝 Sobre o Projeto
-
-Este é um projeto pessoal focado em praticar conhecimentos de integração de sistemas e desenvolvimento Full Stack. Decidi compartilhar este e os próximos projetos que virão para contribuir com a comunidade e documentar minha evolução técnica.
-
-Desenvolvido por **Vinicius Falcão** - *High Store Tech*
