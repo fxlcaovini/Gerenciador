@@ -1,10 +1,5 @@
 # 🚀 Gerenciador REP - Control iD 
 
-Uma solução leve e eficiente para gestão de usuários e biometria facial em relógios de ponto **Control iD **. Este projeto foi desenvolvido para simplificar a manutenção de equipamentos que operam sem sistemas de integração nativos.
-
-## ✨ Diferenciais do Projeto
-
-* **🌐 100% Baseado em Navegador:** O grande desafio superado foi realizar requisições de rede local diretamente pelo browser, eliminando a necessidade de softwares externos complexos ou instaladores pesados.
 * **💻 Terminal de Debug Integrado:** A interface possui um prompt em tempo real que detalha cada comando e resposta da API. Isso garante um feedback claro para o usuário, permitindo entender exatamente o que está acontecendo em cada etapa.
 * **🔌 Arquitetura REST:** Comunicação moderna utilizando padrões API REST entre o Frontend e o Backend (Node.js), e entre o servidor e a API nativa do hardware.
 
