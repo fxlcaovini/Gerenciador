@@ -51,7 +51,7 @@ async function smartRequest(method, endpoint, body, ip, port, sessionId = null) 
                 url: url,
                 data: body,
                 headers: { 'Content-Type': 'application/json' },
-                timeout: 8000, 
+                timeout: 60000, 
                 insecureHTTPParser: true, 
                 httpsAgent: (protocol === 'https' ? httpsAgent : undefined)
             };
@@ -104,9 +104,14 @@ app.post('/api/list_users', async (req, res) => {
 app.post('/api/remove_users', async (req, res) => {
     const { ip, port, sessionId, idList } = req.body;
     try {
+        logServer(`[EXCLUSÃO] Enviando lote de ${idList.length} usuários para o relógio...`);
+        
         const result = await smartRequest('POST', 'remove_users.fcgi', { users: idList }, ip, port, sessionId);
-        return res.json({ success: true, details: result.data });
+        
+        logServer(`[EXCLUSÃO] Lote processado pelo relógio com sucesso!`);
+        return res.json({ success: true, message: `Lote processado.`, details: result.data });
     } catch (error) {
+        logError(error);
         return res.status(500).json({ success: false, message: 'Erro ao excluir.', details: error.message });
     }
 });

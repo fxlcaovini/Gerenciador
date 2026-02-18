@@ -142,30 +142,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. EXCLUIR EM MASSA
     deleteBtn.addEventListener('click', async () => {
-        if (!confirm(`TEM CERTEZA? Isso excluirá ${allUsers.length} usuários.`)) return;
+        if (!confirm(`TEM CERTEZA? Isso excluirá ${allUsers.length} usuários.\n\nEste processo pode levar alguns minutos dependendo do equipamento.`)) return;
 
-        updateUI(true);
+        updateUI(true, 5); 
         const ip = document.getElementById('ip').value;
         const port = document.getElementById('port').value;
-        const BATCH_SIZE = 500;
+        const BATCH_SIZE = 200; 
+        
+        log(`Iniciando exclusão de ${allUsers.length} usuários. Aguarde, o relógio está processando...`, 'info');
 
         for (let i = 0; i < allUsers.length; i += BATCH_SIZE) {
             const batch = allUsers.slice(i, i + BATCH_SIZE);
-            log(`Excluindo lote ${i} a ${i + batch.length}...`);
+            log(`Limpando do ${i + 1}º ao ${i + batch.length}º usuário...`);
 
             try {
-                await fetch('/api/remove_users', {
+                const response = await fetch('/api/remove_users', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ ip, port, sessionId: currentSessionId, idList: batch })
                 });
-                updateUI(true, (i / allUsers.length) * 100);
+                
+                if (!response.ok) throw new Error("Falha no lote");
+                
+                const progress = ((i + batch.length) / allUsers.length) * 100;
+                updateUI(true, progress);
+                
             } catch (e) {
-                log(`Erro no lote iniciando em ${i}`, 'error');
+                log(`Erro ao limpar o lote ${i}`, 'error');
             }
         }
 
-        log('Processo de exclusão finalizado.', 'success');
+        log('Usuários excluidos com sucesso!', 'success');
         allUsers = [];
         updateUI(false, 100);
     });
