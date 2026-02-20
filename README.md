@@ -18,7 +18,7 @@
 Para quem deseja apenas utilizar a ferramenta sem configurar o ambiente de desenvolvimento:
 
 1.  Acesse a aba [Releases](https://github.com/fxlcaovini/Gerenciador/releases).
-2.  Baixe o arquivo `.zip` da versão mais recente.
+2.  Baixe o arquivo `.exe` da versão mais recente.
 3.  **Importante:** Extraia todos os arquivos na mesma pasta. O executável depende dos arquivos de interface para funcionar.
     ```text
     📂 Gerenciador-REP/
