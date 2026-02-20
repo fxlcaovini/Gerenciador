@@ -1,9 +1,9 @@
-# 🚀 Gerenciador REP - Control iD 
+#  Gerenciador REP - Control iD 
 
 * **💻 Terminal de Debug Integrado:** A interface possui um prompt em tempo real que detalha cada comando e resposta da API. Isso garante um feedback claro para o usuário, permitindo entender exatamente o que está acontecendo em cada etapa.
 * **🔌 Arquitetura REST:** Comunicação moderna utilizando padrões API REST entre o Frontend e o Backend (Node.js), e entre o servidor e a API nativa do hardware.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **Linguagens:** JavaScript (ES6+), HTML5 e CSS3.
 * **Backend:** [Node.js](https://nodejs.org/) com [Express](https://expressjs.com/).
@@ -13,7 +13,7 @@
 
 ---
 
-## 📦 Como Utilizar o Executável (.exe)
+## Como Utilizar o Executável (.exe)
 
 Para quem deseja apenas utilizar a ferramenta sem configurar o ambiente de desenvolvimento:
 
@@ -30,7 +30,7 @@ Para quem deseja apenas utilizar a ferramenta sem configurar o ambiente de desen
 
 ---
 
-## 👨‍💻 Para Desenvolvedores
+## Para Desenvolvedores
 
 Se quiser rodar o código fonte ou contribuir:
 
